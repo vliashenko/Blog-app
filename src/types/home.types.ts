@@ -11,12 +11,7 @@ export interface IAuthor {
     avatar: IAvatar;
 }
 
-export interface ICreatedBy {
-    id: string;
-}
-
 export interface ICoverPhoto {
-    createdBy: ICreatedBy;
     url: string;
 }
 

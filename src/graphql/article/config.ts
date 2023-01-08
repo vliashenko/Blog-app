@@ -3,7 +3,8 @@ import { GraphQLClient, gql } from "graphql-request";
 export const graphcms = new GraphQLClient(process.env.NEXT_PUBLIC_API_URL as string);
 
 export const QUERY = gql`
-posts {
+query {
+  posts {
     id,
     title,
     datePublished,
@@ -18,10 +19,10 @@ posts {
       }
     },
     coverPhoto {
-      createdBy {
-        id,
-      }
-      url
+      url,
+      height,
+      width
     }
+  }
 }
 `;
