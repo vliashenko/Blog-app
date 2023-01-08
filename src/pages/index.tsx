@@ -6,6 +6,8 @@ import PostsAPI from '@/graphql/home';
 
 import { IData } from '@/types/home.types';
 import styles from '@/styles/Home.module.css';
+import Header from '@/components/Header';
+import DTD from '@/components/DTD';
 
 export async function getStaticProps() {
   const { graphcms, QUERY } = PostsAPI;
@@ -22,11 +24,10 @@ const Home: FC<IData> = ({ posts }) => {
   return (
     <>
       <Head>
-        <title>DIgital Blog</title>
-        <meta name="description" content="A Blog made with Next.js" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <DTD/>
       </Head>
+
+      <Header/>
       
       <main className={styles.main}>
         {posts.map((item) => {
