@@ -9,10 +9,12 @@ export interface IAvatar {
 export interface IAuthor {
     name: string;
     avatar: IAvatar;
+    id: string
 }
 
 export interface ICoverPhoto {
     url: string;
+    id: string;
 }
 
 export interface IPost {

@@ -3,26 +3,34 @@ import { GraphQLClient, gql } from "graphql-request";
 export const graphcms = new GraphQLClient(process.env.NEXT_PUBLIC_API_URL as string);
 
 export const QUERY = gql`
-query {
-  posts {
-    id,
-    title,
-    datePublished,
-    slug,
-    content {
-      html
-    },
-    author {
-      name,
-      avatar {
+query Post($slug: String!) {
+    post(where: { slug: $slug }) {
+      id
+      title
+      slug
+      datePublished
+      author {
+        id
+        name
+        avatar {
+          url
+        }
+      }
+      content {
+        html
+      }
+      coverPhoto {
+        id
         url
       }
-    },
-    coverPhoto {
-      url,
-      height,
-      width
     }
   }
-}
+`;
+
+export const SLUGLIST = gql`
+    {
+        posts {
+            slug
+        }
+    }
 `;
