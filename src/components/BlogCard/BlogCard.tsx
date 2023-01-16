@@ -3,7 +3,7 @@ import Link from 'next/link';
 import moment from 'moment';
 
 import { IBlogCard } from '@/types/blogcard.types';
-import styles from '@/styles/BlogCard.module.css'
+import styles from './BlogCard.module.css'
 
 const BlogCard: FC<IBlogCard> = ({ author, coverPhoto, datePublished, slug, title }) => {
     return (

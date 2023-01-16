@@ -5,7 +5,7 @@ import DOMPurify from 'isomorphic-dompurify';
 import moment from 'moment';
 
 import { IPost } from '@/types/home.types';
-import { IBlogPost } from '@/components/BlogCard/blogpost.types';
+import { IBlogPost } from '@/components/BlogCard/types';
 import styles from '@/styles/Slug.module.css';
 
 export async function getStaticPaths() {
