@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import Head from 'next/head';
-import BlogCard from '@/components/BlogCard';
+import BlogCard from '@/components/BlogCard/BlogCard';
 
 import PostsAPI from '@/graphql/home';
 
 import { IData } from '@/types/home.types';
 import styles from '@/styles/Home.module.css';
-import Header from '@/components/Header';
-import DTD from '@/components/DTD';
+import Header from '@/components/Header/Header';
+import DTD from '@/components/Head/DTD';
 
 export async function getStaticProps() {
   const { graphcms, QUERY } = PostsAPI;
