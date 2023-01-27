@@ -11,29 +11,29 @@ import DTD from '@/components/Head/DTD';
 
 export async function getStaticProps() {
   const { graphcms, QUERY } = PostsAPI;
-    const { posts } = await graphcms.request(QUERY);
-    return {
-        props: {
-            posts
-        },
-        revalidate: 10
-    }
+  const { posts } = await graphcms.request(QUERY);
+  return {
+    props: {
+      posts
+    },
+    revalidate: 10
+  }
 }
 
 const Home: FC<IData> = ({ posts }) => {
   return (
     <>
       <Head>
-        <DTD/>
+        <DTD />
       </Head>
 
-      <Header/>
-      
+      <Header />
+
       <main className={styles.main}>
         {posts.map((item) => {
-          const { title, author, coverPhoto, slug, datePublished, id} = item;
+          const { title, author, coverPhoto, slug, datePublished, id } = item;
           return (
-            <BlogCard 
+            <BlogCard
               key={id}
               title={title}
               author={author}

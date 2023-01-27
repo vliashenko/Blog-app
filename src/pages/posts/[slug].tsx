@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState, useEffect } from 'react';
 import ArticleAPI from '@/graphql/article';
 
 import DOMPurify from 'isomorphic-dompurify';
@@ -50,7 +50,7 @@ const BlogPost: FC<IBlogPost> = ({ post }) => {
                     <div className={styles.authtext}>
                         <h6>By {post.author.name} </h6>
                         <h6 className={styles.date}>
-                            {moment(post.datePublished).format("MMMM d, YYYY")}
+                            {moment(post.datePublished).format("MMMM Do, YYYY")}
                         </h6>
                     </div>
                 </div>
