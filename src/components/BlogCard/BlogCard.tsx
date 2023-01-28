@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import moment from 'moment';
 
 import { IBlogCard } from '@/types/blogcard.types';
@@ -17,7 +18,12 @@ const BlogCard: FC<IBlogCard> = ({ author, coverPhoto, datePublished, slug, titl
                 <h2>{title}</h2>
                 <div className={styles.details}>
                     <picture className={styles.author}>
-                            <img src={author.avatar.url} alt={author.name} />
+                            <Image 
+                                height={36} 
+                                width={36} 
+                                src={author.avatar.url} 
+                                alt={author.name} 
+                            />
                         <h3>{author.name}</h3>
                     </picture>
                     <div className={styles.date}>

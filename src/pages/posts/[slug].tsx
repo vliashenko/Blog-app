@@ -1,6 +1,7 @@
-import { FC, useState, useEffect } from 'react';
-import ArticleAPI from '@/graphql/article';
+import { FC } from 'react';
+import Image from 'next/image';
 
+import ArticleAPI from '@/graphql/article';
 import DOMPurify from 'isomorphic-dompurify';
 import moment from 'moment';
 
@@ -35,16 +36,18 @@ const BlogPost: FC<IBlogPost> = ({ post }) => {
     return (
         <main className={styles.blog}>
             <picture>
-                <img
+                <Image
                     className={styles.cover}
                     src={post.coverPhoto.url}
                     alt={post.title}
+                    width={1260}
+                    height={1460}
                 />
             </picture>
             <div className={styles.title}>
                 <div className={styles.authdetails}>
                     <picture>
-                        <img src={post.author.avatar.url} alt={post.author.name} />
+                        <Image height={48} width={48} src={post.author.avatar.url} alt={post.author.name} />
                     </picture>
 
                     <div className={styles.authtext}>
