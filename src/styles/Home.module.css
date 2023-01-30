@@ -4,3 +4,8 @@
   grid-gap: 3rem;
 }
 
+@media(max-width: 410.98px) {
+  .main {
+    grid-template-columns: auto;
+  }
+}

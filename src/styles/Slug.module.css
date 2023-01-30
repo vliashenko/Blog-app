@@ -37,6 +37,7 @@
     object-fit: cover;
 }
 
+
 .blog code {
     font-size: 1.2rem;
     background: rgb(55, 55, 55);
@@ -51,9 +52,27 @@
     margin-top: 20px;
 }
 
+
+@media(max-width: 677.98px) {
+    .content a {
+        font-size: 1rem;
+    }
+}
+
+@media(max-width: 484.98px) {
+    .content code {
+        font-size: 13px;
+        line-height: 1.2rem;
+    }
+
+    .content a {
+        font-size: 12px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .blog {
-        margin: 0rem 2rem;
+        margin: 0rem 1.125rem;
     }
 
     .content {
